@@ -1,0 +1,68 @@
+section{
+    height: 100%;
+    overflow: hidden;
+}
+nav { z-index: 5; position: fixed; top: 0; left: 0; right: 0; width: 190px; height: 100%; border-right: 1px solid #070707;}
+nav .top { position: relative; padding: 0 0 0px 20px; height: 190px; font-size: 14px; border-bottom: 1px solid #070707; }
+nav .top p { padding: 40px 0 15px; font-size: 24px; font-weight: bold;}
+nav ul a { display: block; position: relative; padding-left: 60px; height: 45px; line-height: 45px; border-bottom: 1px solid #070707;}
+nav ul a::before{ display: inline-block; margin-right: 20px; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; }
+nav ul a:nth-child(1):before{ content: ""; background: url(../assets/nav/About.png); background-size: 20px 20px; }
+nav ul a:nth-child(2):before{ content: ""; background: url(../assets/nav/Experience.png); background-size: 20px 20px; }
+nav ul a:nth-child(3):before{ content: ""; background: url(../assets/nav/Projects.png); background-size: 20px 20px; }
+nav ul a:nth-child(4):before{ content: ""; background: url(../assets/nav/Skills.png); background-size: 20px 20px; }
+nav ul a:nth-child(5):before{ content: ""; background: url(../assets/nav/Carrer.png); background-size: 20px 20px; }
+nav ul a:nth-child(6):before{ content: ""; background: url(../assets/nav/Blog.png); background-size: 20px 20px; }
+nav ul a:nth-child(7):before{ content: ""; background: url(../assets/nav/Contact.png); background-size: 20px 20px; }
+nav .btm { position: absolute; bottom: 24px; padding-left: 20px;}
+nav .btm p { padding-bottom: 6px;}
+
+section article { margin-left: 191px; width: 100%; height: 100%; background: #EFEFEF;}
+.Home article p { padding: 80px 0 0 79px; font-size: 40px;}
+
+div.title { margin-left: 191px; width: 100%; height: 108px;  background-color: #008073; }
+div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 108px;}
+
+.About { position: relative;}
+.About article img { position: relative; padding: 65px 125px 0 240px;}
+.About article p { position: absolute; top: 290px; display: inline-block; font-size: 37px; font-weight: bold; color: #000; width: 800px;}
+.About article pre { position: absolute; top: 510px; display: inline-block; font-size: 17px; color: #545454; width: 800px;}
+
+.Skills article>div { margin-left: 240px; width: 1252px; height: 200px; background: #fff; box-shadow: 5px 5px #dedede}
+.Skills article>div.top::before {position: absolute; top: 60px; content: ""; padding: 60px 0 0 0;}
+.Skills article>div.top { position: relative; top: 60px;}
+.Skills article>div.middle { margin: 100px 0 40px 240px;}
+.Skills article div p { position: relative; padding: 20px 0 32.5px 20px; font-size: 20px; color: #8c8c8c; font-weight: bold;}
+.Skills article div p::after { position: absolute; left: 20px; bottom: 12.5px; content: ""; width: 1222px; height: 1px; background: #707070;}
+.Skills article div ul { padding: 80px 0 0 70px;}
+.Skills article div ul li { position: relative; padding: 0 120px 0 0; float: left; font-size: 12px; color: #000; font-weight: bold; text-align: center; width: 100px;}
+.Skills article div ul li::before { position: absolute; left: 50px; top: -75px; transform: translateX(-50%); content: ""; width: 70px; height: 70px; }
+.Skills article div.top ul li:nth-child(1):before {background: url(../assets/Skills/python.png) no-repeat; background-size: contain;}
+.Skills article div.top ul li:nth-child(2):before {background: url(../assets/Skills/C++.png) no-repeat; background-size: contain;}
+.Skills article div.top ul li:nth-child(3):before {background: url(../assets/Skills/C.png) no-repeat; background-size: contain;}
+.Skills article div.top ul li:nth-child(4):before {background: url(../assets/Skills/HTML5.png) no-repeat; background-size: contain;}
+.Skills article div.top ul li:nth-child(5):before {background: url(../assets/Skills/CSS3.png) no-repeat; background-size: contain;}
+.Skills article div.middle ul li:nth-child(1):before {background: url(../assets/Skills/Deep_Learning.png) no-repeat; background-size: contain;}
+.Skills article div.middle ul li:nth-child(2):before {background: url(../assets/Skills/Machine_Learning.png) no-repeat; background-size: contain;}
+.Skills article div.middle ul li:nth-child(3):before {background: url(../assets/Skills/Reinforcement_Learning.png) no-repeat; background-size: contain;}
+.Skills article div.middle ul li:nth-child(4):before {background: url(../assets/Skills/ROS.png) no-repeat; background-size: contain;}
+.Skills article div.btm ul li:nth-child(1):before {background: url(../assets/Skills/Github.png) no-repeat; background-size: contain;}
+
+.Career article { padding: 0 170px; width: 1410px; height: 827px;}
+.Career article { padding-top: 60px;}
+
+
+.Contact .form { padding: 35px 0 0 240px; width: 1000px; height: 750px; }
+.Contact .form p { padding-bottom: 26px; font-size: 25px; color: #545454;}
+.Contact .form form { padding: 0 0 26px 0; width: 750px; background: #E5E5E5; border: 1px solid #707070; box-shadow:  3px 3px #b5b5b5;}
+.Contact .form form p:first-child { padding: 31px 0 0 38px;}
+.Contact .form form p { padding: 35px 0 0 38px; font-size: 20px;}
+.Contact .form form p label { padding-bottom: 6px; display: block;}
+.Contact .form form p input { padding-left: 13px; width: 650px; height: 46px; font-size: 15px; line-height: 15px;}
+.Contact .form form p input::-webkit-input-placeholder { font-size: 15px; color:#b5b5b5;}
+.Contact .form form p input:focus { outline: 1px solid black; transition: none;}
+.Contact .form form p textarea { padding: 10px 0 0 13px; width: 650px; height: 46px; font-size: 15px; }
+.Contact .form form p textarea::-webkit-input-placeholder { font-size: 15px; color:#b5b5b5; }
+.Contact .form form p textarea:focus { outline: 1px solid black; transition: none;}
+.Contact .form form input[type="submit"] { font-family: FontAwesome; margin: 27px 0 0 38px; width: 110px; height: 50px; font-size: 20px; font-weight: normal; text-align: center; color: #fff; background: #008ccf; transition: 0.5s;}
+.Contact .form form input[type="submit"]:hover { transition: 0.5s; background: #01699B;}
