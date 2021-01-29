@@ -4,10 +4,24 @@ $(document).ready(function(){
   $('#fullpage').fullpage({
     sectionSelector: '.section',
     slideSelector: '.horizontal-scrolling',
-    navigation: true,
+    navigation: false,
     slidesNavigation: true,
     css3: true,
-    controlArrows: false
+    controlArrows: false,
+    scrollBar: false,
+    onLeave: function( section, origin, destination, direction){
+      var leavingSlide = this;
+      console.log(direction)
+  
+      //leaving the first slide of the 2nd Section to the right
+      if(destination== 'down'){
+        if($('.About').offset().top < 1000){
+          $('#my_photo').addClass('animate'); 
+          $('#my_photo').prev().addClass('animate');
+          $('#my_photo').next().addClass('animate');
+        }        
+      }
+    }    
   });
 
   $('.GoHome').on('click', function(e){
@@ -42,15 +56,19 @@ $(document).ready(function(){
     e.preventDefault();
     $.fn.fullpage.moveTo(8);
   });  
+
+  
 });
 
+// Blog 슬라이드 부분
 var sliderWrapper = document.getElementsByClassName('container'), //클래스명 container
-    sliderContainer = document.getElementsByClassName('slider-container'), //클래스명 slider-container
-    slides = document.getElementsByClassName('slide'), //클래스명 slide
-    slidecount = Math.ceil(slides.length / 3.0), //슬라이드의 개수
-    currentIndex = 0, // 현재보고있는 페이지
-    navPrev = document.getElementById('blog_prev'), // 아이디 blog_prev
-    navNext = document.getElementById('blog_next');  // 아이디 blog_next
+  sliderContainer = document.getElementsByClassName('slider-container'), //클래스명 slider-container
+  slides = document.getElementsByClassName('slide'), //클래스명 slide
+  slidecount = Math.ceil(slides.length / 3.0), //슬라이드의 개수
+  currentIndex = 0, // 현재보고있는 페이지
+  navPrev = document.getElementById('blog_prev'), // 아이디 blog_prev
+  navNext = document.getElementById('blog_next');  // 아이디 blog_next
+
 
 //슬라이드가 있으면 가로로 배열하기
 for(var i = 0;i<slidecount;i++){
@@ -96,3 +114,4 @@ navNext.addEventListener('click', function(){
 });
 
 goToSlide(0); // 첫 페이지에서 prev 버튼을 없애주기 위함
+

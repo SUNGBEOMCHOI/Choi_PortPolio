@@ -24,9 +24,20 @@ div.title { margin-left: 191px; width: 100%; height: 108px;  background-color: #
 div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 108px;}
 
 .About { position: relative;}
-.About article img { position: relative; padding: 65px 125px 0 240px;}
-.About article p { position: absolute; top: 290px; display: inline-block; font-size: 37px; font-weight: bold; color: #000; width: 800px;}
+.About article img{ position: relative; padding: 115px 125px 0 240px; opacity: 0; transition: 0.5s; transition-delay: 1s;}
+.About article img:first-child { position: absolute; right: 930px; filter:blur(15px); opacity: 0;}
+.About article img.animate { transform:translateY(-50px); opacity: 1;}
+.About article.animate { transform:translateY(-5px)}
+.About article p { position: absolute; top: 290px; display: inline-block; font-size: 37px; font-weight: bold; color: #000; width: 800px; }
 .About article pre { position: absolute; top: 510px; display: inline-block; font-size: 17px; color: #545454; width: 800px;}
+.About article p.animate { animation: bounce_frames 0.5s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+    animation-iteration-count: 4; }
+@keyframes bounce_frames {
+    from {transform: translate3d(0, 0, 0);}
+    to {transform: translate3d(0, 50px, 0);}
+    }
 
 .Skills article>div { margin-left: 240px; width: 1252px; height: 200px; background: #fff; box-shadow: 5px 5px #dedede}
 .Skills article>div.top::before {position: absolute; top: 60px; content: ""; padding: 60px 0 0 0;}
