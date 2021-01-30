@@ -14,14 +14,14 @@ nav ul a:nth-child(4):before{ content: ""; background: url(../assets/nav/Skills.
 nav ul a:nth-child(5):before{ content: ""; background: url(../assets/nav/Carrer.png); background-size: 20px 20px; }
 nav ul a:nth-child(6):before{ content: ""; background: url(../assets/nav/Blog.png); background-size: 20px 20px; }
 nav ul a:nth-child(7):before{ content: ""; background: url(../assets/nav/Contact.png); background-size: 20px 20px; }
-nav ul a:hover { background: #e4e4e4;}
-nav ul a:nth-child(1):hover { border-left: 4px solid #3C98D1;}
-nav ul a:nth-child(2):hover { border-left: 4px solid #F48440;}
-nav ul a:nth-child(3):hover { border-left: 4px solid #A48B82;}
-nav ul a:nth-child(4):hover { border-left: 4px solid #4788C7;}
-nav ul a:nth-child(5):hover { border-left: 4px solid #FFCF3C;}
-nav ul a:nth-child(6):hover { border-left: 4px solid #E74944;}
-nav ul a:nth-child(7):hover { border-left: 4px solid #707070;}
+nav ul a:hover, nav ul a.animate { background: #e4e4e4;}
+nav ul a:nth-child(1):hover, nav ul a:nth-child(1).animate { border-left: 4px solid #3C98D1;}
+nav ul a:nth-child(2):hover, nav ul a:nth-child(2).animate { border-left: 4px solid #F48440;}
+nav ul a:nth-child(3):hover, nav ul a:nth-child(3).animate { border-left: 4px solid #A48B82;}
+nav ul a:nth-child(4):hover, nav ul a:nth-child(4).animate { border-left: 4px solid #4788C7;}
+nav ul a:nth-child(5):hover, nav ul a:nth-child(5).animate { border-left: 4px solid #FFCF3C;}
+nav ul a:nth-child(6):hover, nav ul a:nth-child(6).animate { border-left: 4px solid #E74944;}
+nav ul a:nth-child(7):hover, nav ul a:nth-child(7).animate { border-left: 4px solid #707070;}
 nav .btm { position: absolute; bottom: 24px; padding-left: 20px;}
 nav .btm p { padding-bottom: 6px;}
 
