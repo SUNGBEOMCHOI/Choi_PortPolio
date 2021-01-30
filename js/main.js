@@ -11,8 +11,10 @@ $(document).ready(function(){
     scrollBar: false,
     onLeave: function( section, origin, destination, direction){
       var leavingSlide = this;
-      console.log(direction)
-  
+      var page = ['Home', 'About', 'Experience', 'Projects', 'Skills', 'Career', 'Blog', 'Contact'];
+      $('.'+"Go"+page[section-1]).removeClass('animate');
+      $('.'+"Go"+page[origin-1]).addClass('animate');
+
       //leaving the first slide of the 2nd Section to the right
       if(destination== 'down'){
         if($('.About').offset().top < 1000){
