@@ -47,6 +47,26 @@ div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 1
     to {transform: translate3d(0, 50px, 0);}
     }
 
+.Experience article { position: relative;}
+.Experience i { z-index: 5; font-size: 70px; color: #cfcfcf; cursor: pointer; padding: 380px 0; transition: ease-in 0.2s;}
+.Experience i#experience_prev { position: absolute; top: 0%; left: 0px; padding-left: 90px;  }
+.Experience i#experience_next { position: absolute; top: 0%; right: 200px; padding-right: 100px; }
+.Experience i#experience_prev:hover { background: linear-gradient( to left, #efefef, rgba(133, 133, 133, 0.5) ); }
+.Experience i#experience_next:hover { background: linear-gradient( to right, #efefef, rgba(133, 133, 133, 0.5) );}
+.Experience i.disabled { display: none;}
+.Experience i:hover { color: #a8a8a8;}
+.Experience article div.experience-container { position: relative; margin: 150px 300px; display: inline-block; width: 1190px; height: 602px; overflow: hidden; }
+.Experience article div div.experience-slider-container { position: absolute; width: 10000%; height: 602px; -webkit-transition: left 0.3s ease-in; transition: left 0.5s ease-in;}
+.Experience article ul { display: inline-block; width: 1190px; height: 600px; box-sizing: border-box;}
+.Experience article ul li { position: relative; height: 200px; height: 165px; box-sizing: border-box; } 
+.Experience article ul li:nth-child(2) { position: relative; margin: 52px 0;}
+.Experience article ul li:nth-child(2)::before { position: absolute; top:-20px; content: ""; width: 1100px; height: 2px; background: rgb(120, 120, 120);}
+.Experience article ul li:nth-child(3)::before { position: absolute; top:-20px; content: ""; width: 1100px; height: 2px; background: rgb(120, 120, 120);}
+.Experience article ul li span { position: absolute; top: 0px; left: 30px; display: inline-block; width: 170px; height: 100%; font-size: 18px; color: #8c8c8c; font-weight: bold;}
+.Experience article ul li p { position: absolute; top: 0px; left: 200px; display: inline-block; width: 350px; height: 100%; font-size: 25px; font-weight: bold; color: black; word-break: keep-all; white-space: pre-wrap;}
+.Experience article ul li pre { position: absolute; top: 0px; left: 610px; display: inline-block; width: 490px; height: 100%; font-size: 14px; color: #8c8c8c; word-break: keep-all; white-space: pre-wrap;}
+
+
 .Skills article>div { margin-left: 240px; width: 1252px; height: 200px; background: #fff; box-shadow: 5px 5px #dedede}
 .Skills article>div.top::before {position: absolute; top: 60px; content: ""; padding: 60px 0 0 0;}
 .Skills article>div.top { position: relative; top: 60px;}
@@ -71,12 +91,13 @@ div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 1
 .Career article { padding-top: 60px;}
 
 .Blog article { position: relative;}
-.Blog i { z-index: 5; font-size: 70px; color: #A8A8A8; cursor: pointer; padding: 380px 0;}
+.Blog i { z-index: 5; font-size: 70px; color: #cfcfcf; cursor: pointer; padding: 380px 0; transition: ease-in 0.2s;}
 .Blog i#blog_prev { position: absolute; top: 0%; left: 0px; padding-left: 90px; background: linear-gradient(to left, black white); }
 .Blog i#blog_next { position: absolute; top: 0%; right: 200px; padding-right: 100px; }
 .Blog i#blog_prev:hover { background: linear-gradient( to left, #efefef, rgba(133, 133, 133, 0.5) );}
 .Blog i#blog_next:hover { background: linear-gradient( to right, #efefef, rgba(133, 133, 133, 0.5) );}
 .Blog i.disabled { display: none;}
+.Blog i:hover { color: #a8a8a8;}
 .Blog article div.container { position: relative; margin: 100px 270px; display: inline-block; width: 1190px; height: 602px;  overflow: hidden;} 
 .Blog article div ul { margin: 0 10px; position: absolute; top: 50%; transform: translateY(-50%); width: 1000%;}
 .Blog article div ul.animated { -webkit-transition: left 0.3s ease-in; transition: left 0.3s ease-in;}
@@ -85,9 +106,9 @@ div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 1
 .Blog article div ul a:first-child { margin: 0 50px 0 0;}
 .Blog article div ul a li img { width: 321px; height: 170px; border-bottom: 1px solid #c0c0c0; }
 .Blog article div ul a li div { padding: 30px 20px 40px 15px; overflow: hidden;}
-.Blog article div ul a li div p { display: -webkit-box; margin: 0 0 20px; width: 290px; height: 105px; font-size: 23px; font-weight: bold; color: rgb(43, 43, 43); overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical;}
+.Blog article div ul a li div p { display: -webkit-box; margin: 0 0 20px; width: 290px; height: 105px; font-size: 23px; font-weight: bold; color: rgb(43, 43, 43); overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: keep-all;}
 .Blog article div ul a li div span { font-size: 11px; color: #8C8C8C;}
-.Blog article div ul a li div pre { display: -webkit-box; padding: 20px 0 0; width: 290px; height: 140px; font-size: 14px; color: #8C8C8C; font-weight: normal; overflow: hidden; white-space: pre-wrap; -webkit-line-clamp: 7; -webkit-box-orient: vertical;}
+.Blog article div ul a li div pre { display: -webkit-box; padding: 20px 0 0; width: 290px; height: 140px; font-size: 14px; color: #8C8C8C; font-weight: normal; overflow: hidden; white-space: pre-wrap; -webkit-line-clamp: 7; -webkit-box-orient: vertical; word-break: keep-all;}
 
 
 .Contact .form { padding: 35px 0 0 240px; width: 1000px; height: 750px; }
