@@ -2,7 +2,8 @@ section{
     height: 100%;
     overflow: hidden;
 }
-nav { z-index: 5; position: fixed; top: 0; left: 0; right: 0; width: 190px; height: 100%; border-right: 1px solid #070707;}
+nav { z-index: 1; position: fixed; top: 0; left: 0; right: 0; width: 190px; height: 100%; border-right: 1px solid #070707;}
+nav.modal-up { z-index: 0;}
 nav .top { position: relative; padding: 0 0 0px 20px; height: 190px; font-size: 14px; border-bottom: 1px solid #070707; }
 nav .top p { padding: 40px 0 15px; font-size: 24px; font-weight: bold; color: #009284;} 
 nav ul a { display: block; position: relative; padding-left: 60px; height: 45px; line-height: 45px; border-bottom: 1px solid #070707; box-sizing: border-box;}
@@ -110,7 +111,6 @@ div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 1
 .Blog article div ul a li div span { font-size: 11px; color: #8C8C8C;}
 .Blog article div ul a li div pre { display: -webkit-box; padding: 20px 0 0; width: 290px; height: 140px; font-size: 14px; color: #8C8C8C; font-weight: normal; overflow: hidden; white-space: pre-wrap; -webkit-line-clamp: 7; -webkit-box-orient: vertical; word-break: keep-all;}
 
-
 .Contact .form { padding: 35px 0 0 240px; width: 1000px; height: 750px; }
 .Contact .form p { padding-bottom: 26px; font-size: 25px; color: #545454;}
 .Contact .form form { padding: 0 0 26px 0; width: 750px; background: #E5E5E5; border: 1px solid #707070; box-shadow:  3px 3px #b5b5b5;}
@@ -125,3 +125,12 @@ div.title span{ padding-left: 60px; font-size: 36px; color: #fff; line-height: 1
 .Contact .form form p textarea:focus { outline: 1px solid black; transition: none;}
 .Contact .form form input[type="submit"] { font-family: FontAwesome; margin: 27px 0 0 38px; width: 110px; height: 50px; font-size: 20px; font-weight: normal; text-align: center; color: #fff; background: #008ccf; transition: 0.5s;}
 .Contact .form form input[type="submit"]:hover { transition: 0.5s; background: #01699B;}
+.Contact { position: relative;}
+.Contact div.hidden { display: none;}
+.Contact .modal { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);}
+.Contact .pop-up { position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); width: 500px; height: 500px; text-align: center; background-color: #ffa62a; }
+.Contact .pop-up div { position: absolute; top: -80px; margin: 0 170px; padding: 8px 8px 0 0; width: 160px; height: 160px; background-color: #117dca; font-size: 80px; color: white; border-radius: 100px; border: 10px solid white; box-sizing: border-box; }
+.Contact .pop-up p { position: absolute; margin-top: 100px; padding: 0; background: white; font-size: 30px; color: #5e5e5e; width: 462px; height: 200px; }
+.Contact .pop-up p span { display: inline-block; margin: 30px 0; font-size: 50px; font-weight: bold;}
+.Contact .pop-up button { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); margin: 70px 0; width: 200px; height: 60px; font-size: 20px; font-weight: bold; color: white; background-color: #117dca; border-radius: 8px;}
+.Contact .pop-up button:hover { background-color: #0d5d98; cursor: pointer;}
