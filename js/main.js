@@ -123,6 +123,111 @@ experience_slide()
 
 
 //---------------------------------------------//
+//Projects 슬라이드 부분
+function projects_slide(){
+  var sliderWrapper = document.getElementsByClassName('projects-container'), //클래스명 projects-container
+  sliderContainer = document.getElementsByClassName('projects-slider-container'), //클래스명 projects-container
+  slides = document.getElementsByClassName('projects-slide'), //클래스명 projects-slide
+  slidecount = slides.length, //슬라이드의 개수
+  currentIndex = 0, // 현재보고있는 페이지
+  navPrev = document.getElementById('projects_prev'), // 아이디 projects_prev
+  navNext = document.getElementById('projects_next');  // 아이디 projects_next
+
+//슬라이드가 있으면 가로로 배열하기
+for(var i = 0;i<slidecount;i++){
+  slides[i].style.left = i*100 + '%'
+}
+
+// 슬라이드 이동 함수
+function goToSlide(idx){
+  if(idx==0){
+    sliderContainer[0].style.left = 0 + '%';
+  }else{
+    sliderContainer[0].style.left = (idx * -100 ) + '%';
+  }
+  sliderContainer[0].classList.add('animated');
+  currentIndex = idx;
+
+  updateNav();
+}
+
+// 버튼기능 업데이트 함수
+function updateNav(){
+  // 처음일때
+  if(currentIndex == 0){
+    navPrev.classList.add('disabled');
+  }else{
+    navPrev.classList.remove('disabled');
+  }
+  // 마지막일때
+  if(currentIndex == slidecount-1){
+    navNext.classList.add('disabled');
+  }else{
+    navNext.classList.remove('disabled');
+  }
+}
+
+// 버튼을 클릭하면 슬라이드 이동시키기
+navPrev.addEventListener('click', function(){
+  goToSlide(currentIndex - 1);  
+});
+
+navNext.addEventListener('click', function(){
+  goToSlide(currentIndex + 1);
+});
+
+goToSlide(0); // 첫 페이지에서 prev 버튼을 없애주기 위함
+}
+projects_slide()
+
+function projects(){
+  var parents = document.getElementsByClassName('projects-slide-content'), // 클래스명 projects-slide-content
+  childs = [],
+  popUp = document.getElementsByClassName('projects_popup')[0], // 팝업을 위한 변수
+  navigation = document.querySelector("nav"),
+  popUpModal = document.getElementsByClassName('projectsPopUp');
+  
+  //childs에 자식 요소를 모아둠
+  for(var index=0; index < parents.length; index = index+1){
+    childs.push(parents[index].childNodes[1]); // 1번째 div 태그를 가져옴
+    childs[index].style.visibility='hidden';
+  }
+
+  // 특정 index의 parent에 마우스가 올라가면 child의 style을 visible로 변경하는 함수
+  function eventlisten(index){
+    parents[index].addEventListener('mouseover', function(){
+      childs[index].style.visibility='visible';
+    });
+    parents[index].addEventListener('mouseout', function(){
+        childs[index].style.visibility='hidden';
+    });
+  }
+
+  // 특정 index의 parent를 클릭하면 pop-up이 띄어지는 함수
+  function experience_popup(index){
+    parents[index].addEventListener('click', function(){
+      popUp.classList.remove('hidden');
+      navigation.classList.add('modal-up');
+      popUpModal[0].style.background='url(../assets/projects/yonsei.png) no-repeat';
+      popUpModal[0].style['background-size']="contain";
+    });
+    $('.projects_popup').click(function(e) {
+      if(!$(e.target).hasClass("projectsPopUp")){
+        popUp.classList.add('hidden');
+        navigation.classList.remove('modal-up');
+      }
+    });
+  }
+
+  //pop-up된 상태에서 이미지 이외에 다른 부분을 클릭하면 모달창이 내려가게 하는
+
+
+  for(var i=0; i<parents.length; i += 1){
+    eventlisten(i);
+    experience_popup(i)
+  }
+}
+projects();
 
 function blog_slide(){
 // Blog 슬라이드 부분
