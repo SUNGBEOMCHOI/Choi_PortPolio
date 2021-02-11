@@ -210,27 +210,36 @@ function projects(){
   //childs에 자식 요소를 모아둠
   for(var index=0; index < parents.length; index = index+1){
     childs.push(parents[index].childNodes[1]); // 1번째 div 태그를 가져옴
-    childs[index].style.visibility='hidden';
+    if('soon' != parents[index].childNodes[1].classList.value){
+      parents[index].childNodes[1].style.visibility='hidden';
+    }
   }
 
   // 특정 index의 parent에 마우스가 올라가면 child의 style을 visible로 변경하는 함수
   function eventlisten(index){
-    parents[index].addEventListener('mouseover', function(){
-      childs[index].style.visibility='visible';
-    });
-    parents[index].addEventListener('mouseout', function(){
-        childs[index].style.visibility='hidden';
-    });
+    if('soon' != parents[index].childNodes[1].classList.value){
+      parents[index].addEventListener('mouseover', function(){
+        childs[index].style.visibility='visible';
+      });
+      parents[index].addEventListener('mouseout', function(){
+          childs[index].style.visibility='hidden';
+      });
+    }
   }
 
   // 특정 index의 parent를 클릭하면 pop-up이 띄어지는 함수
   function experience_popup(index){
+    var file_name = ['수강신청마일리지생성기.png', '포트폴리오웹사이트제작.png']
     parents[index].addEventListener('click', function(){
-      popUp.classList.remove('hidden');
-      navigation.classList.add('modal-up');
-      popUpModal[0].style.background='url(../assets/projects/yonsei.png) no-repeat';
-      popUpModal[0].style['background-size']="contain";
+      if('soon' != childs[index].classList.value){
+        popUp.classList.remove('hidden');
+        navigation.classList.add('modal-up');
+        popUpModal[0].style.background='url(../assets/projects/'+ file_name[index] +') no-repeat';
+        console.log('url(../assets/projects/'+ file_name[index] +') no-repeat');
+        popUpModal[0].style['background-size']="contain";
+      }
     });
+    //pop-up이 띄어진 후 주변을 클릭하면 modal 창이 내려감
     $('.projects_popup').click(function(e) {
       if(!$(e.target).hasClass("projectsPopUp")){
         popUp.classList.add('hidden');
@@ -242,7 +251,7 @@ function projects(){
   //pop-up된 상태에서 이미지 이외에 다른 부분을 클릭하면 모달창이 내려가게 하는
 
 
-  for(var i=0; i<parents.length; i += 1){
+  for(var i=0; i<parents.length; i += 1){ 
     eventlisten(i);
     experience_popup(i)
   }
