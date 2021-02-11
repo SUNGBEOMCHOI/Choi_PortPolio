@@ -59,8 +59,28 @@ $(document).ready(function(){
     $.fn.fullpage.moveTo(8);
   });  
 
-  
+  // 한 페이지의 height를 100%로 변경
+  function pageheight(){
+    var page = document.getElementsByClassName('fp-section');
+    for(var i=0; i<8; i++){
+      page[i].style = "height: 100%";
+    }
+  }
+  pageheight();
 });
+
+// 화면의 해상도에 따라 확대 정도를 변경
+function resizeApply(){ 
+  var minWidth = 1920; 
+  var body = document.getElementsByTagName('body')[0]; 
+  if (window.innerWidth < minWidth) { 
+    body.style.zoom = (window.innerWidth / minWidth); 
+  } else {
+    body.style.zoom = 1; 
+  }
+}
+
+resizeApply();
 
 
 //Experience 슬라이드 부분
