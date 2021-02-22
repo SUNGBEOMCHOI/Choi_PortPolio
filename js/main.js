@@ -234,7 +234,7 @@ function projects(){
       if('soon' != childs[index].classList.value){
         popUp.classList.remove('hidden');
         navigation.classList.add('modal-up');
-        popUpModal[0].style.background='url(../assets/projects/'+ file_name[index] +') no-repeat';
+        popUpModal[0].style.background='url(../assets/Projects/'+ file_name[index] +') no-repeat';
         console.log('url(../assets/projects/'+ file_name[index] +') no-repeat');
         popUpModal[0].style['background-size']="contain";
       }
