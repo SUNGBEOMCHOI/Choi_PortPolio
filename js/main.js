@@ -229,7 +229,7 @@ function projects(){
 
   // 특정 index의 parent를 클릭하면 pop-up이 띄어지는 함수
   function experience_popup(index){
-    var file_name = ['수강신청마일리지생성기.png', '포트폴리오웹사이트제작.png']
+    var file_name = ['mileage.png', 'portfolio.png']
     parents[index].addEventListener('click', function(){
       if('soon' != childs[index].classList.value){
         popUp.classList.remove('hidden');
