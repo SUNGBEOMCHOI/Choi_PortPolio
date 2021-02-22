@@ -15,7 +15,7 @@ $(document).ready(function(){
       $('.'+"Go"+page[section-1]).removeClass('animate');
       $('.'+"Go"+page[origin-1]).addClass('animate');
 
-      //leaving the first slide of the 2nd Section to the right
+      
       if(destination== 'down'){
         if($('.About').offset().top < 1000){
           $('#my_photo').addClass('animate'); 
@@ -67,6 +67,10 @@ $(document).ready(function(){
     }
   }
   pageheight();
+
+  setTimeout(() => $("#home_p1").addClass('animate'), 1000);
+  setTimeout(() => $("#home_p2").addClass('animate'), 2000);
+  setTimeout(() => $("#home_p3").addClass('animate'), 3000);
 });
 
 // 화면의 해상도에 따라 확대 정도를 변경
@@ -234,7 +238,7 @@ function projects(){
       if('soon' != childs[index].classList.value){
         popUp.classList.remove('hidden');
         navigation.classList.add('modal-up');
-        popUpModal[0].style.background='url(../assets/Projects/'+ file_name[index] +') no-repeat';
+        popUpModal[0].style.background='url(./assets/Projects/'+ file_name[index] +') no-repeat';
         console.log('url(../assets/projects/'+ file_name[index] +') no-repeat');
         popUpModal[0].style['background-size']="contain";
       }
